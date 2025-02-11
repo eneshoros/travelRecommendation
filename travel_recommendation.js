@@ -7,12 +7,11 @@ function jsonSearch() {
     .value.toLowerCase();
   const emptyDiv = document.getElementById("emptyDiv");
 
-  emptyDiv.innerHTML = ""; // İlk önce boşaltıyoruz
+  emptyDiv.innerHTML = "";
 
   fetch("travel_recommendation_api.json")
     .then((response) => response.json())
     .then((data) => {
-      // Beach araması
       if (destination === "beach" || destination === "beaches") {
         emptyDiv.style.visibility = "visible";
         const beaches = data.beaches;
@@ -26,13 +25,11 @@ function jsonSearch() {
         });
       }
 
-      // Country araması
       if (destination === "country" || destination === "countries") {
         emptyDiv.style.visibility = "visible";
         const countries = data.countries;
 
         countries.forEach((country) => {
-          // Ülke bilgilerini eklerken id'yi kontrol et
           emptyDiv.innerHTML += `<h2>Country: ${country.name}<h2>`;
 
           country.cities.forEach((city) => {
@@ -46,7 +43,6 @@ function jsonSearch() {
         });
       }
 
-      // Temple araması
       if (destination === "temple" || destination === "temples") {
         emptyDiv.style.visibility = "visible";
         const temples = data.temples;
