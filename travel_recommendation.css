@@ -1,0 +1,411 @@
+/* Genel stil ayarları */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(51, 51, 51, 0.8); /* Yarı saydam arka plan */
+  padding: 10px 20px;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Navbar'a gölge ekledik */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left h1 {
+  font-size: 24px;
+}
+
+.navbar-left svg {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.navbar-center ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.navbar-center li {
+  margin: 0 30px;
+}
+
+.navbar-center a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar-center a:hover {
+  text-decoration: underline;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right input {
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  width: 250px;
+  margin-right: 10px;
+}
+
+.navbar-right button {
+  padding: 8px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.navbar-right button:hover {
+  background-color: #555;
+}
+
+/* Search Buton Renkleri */
+#searchBtn {
+  background-color: #4caf50;
+  color: white;
+}
+
+#clearBtn {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Hover efektleri */
+.navbar-center a:hover {
+  text-decoration: underline;
+}
+
+.navbar-right button:hover {
+  background-color: #777;
+}
+
+/* Content Section */
+.content-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.content-left,
+.content-middle,
+.content-right {
+  flex: 1;
+}
+
+.content-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.content-middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.content-text {
+  position: fixed;
+  top: 40%;
+  z-index: 1000;
+}
+
+.content-text h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.content-text p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.btn-start {
+  padding: 10px 20px;
+  background-color: #ff7f50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.btn-start:hover {
+  background-color: #ff5722;
+}
+
+/* Sosyal Medya İkonları */
+.social-media {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 1000;
+}
+
+.social-media a {
+  text-decoration: none;
+}
+
+.social-media i {
+  font-size: 30px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.social-media i:hover {
+  transform: scale(1.2);
+  color: #4caf50;
+}
+
+/* Yeni boş alan (content-right) stil */
+.empty-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 120px;
+}
+
+.item,
+.city-item {
+  background-color: rgba(0, 0, 0, 0.7); /* Saydam bir arka plan */
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px; /* Sabit genişlik */
+  margin: 20px; /* Öğeler arasında boşluk */
+  margin-top: 20px; /* Navbar yüksekliğine göre üst boşluk ekledik */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Hafif gölge */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item img,
+.city-item img {
+  width: 100%; /* Resimlerin tüm alanı kaplaması */
+  height: 200px; /* Resimlerin sabit yüksekliği */
+  object-fit: cover; /* Resimleri kırp */
+}
+
+.item h2,
+.city-item h3 {
+  font-size: 24px;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.item p,
+.city-item p {
+  font-size: 16px;
+  color: #ddd;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.item:hover,
+.city-item:hover {
+  transform: translateY(-10px); /* Hoverda yukarıya kayma */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Daha belirgin gölge */
+}
+
+#visit {
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  background-color: #ff7f50;
+}
+
+#visit:hover {
+  background-color: #ff5722; /* Genel hover efekti */
+  background-color: #ff5722;
+}
+
+/* Hakkımızda Sayfası Genel Stilleri */
+.about-us-section {
+  margin-top: 120px; /* Navbar'dan sonra gelen boşluk */
+  padding: 30px 20px;
+  color: white;
+}
+
+/* Başlık Stili */
+.about-header h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Şirket Hakkında Bilgi */
+.company-info {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.company-info h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.company-info p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.team-section h2 {
+  font-size: 81px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Şirket Çalışanları */
+.team-section {
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap; /* Yatayda taşmasını engeller */
+  gap: 50px;
+}
+
+.team-member {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  margin: 10px; /* Kısıtlı boşluk */
+  border-radius: 8px;
+  max-width: 300px; /* Her bir üyeye maksimum genişlik */
+  flex: 0 1 300px; /* Üyelerin genişliklerini sınırlayarak aralarındaki boşluğu azaltır */
+  box-sizing: border-box;
+}
+
+.team-member h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.team-member p {
+  font-size: 16px;
+  color: #ddd;
+}
+
+/* İletişim Sayfası Genel Stilleri */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 300px; /* Navbar'dan sonra gelen boşluk */
+  padding: 30px;
+  color: white;
+  gap: 30px;
+}
+
+.contact-left {
+  flex: 0 1 45%;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.contact-left h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.contact-left p {
+  font-size: 18px;
+}
+
+.contact-right {
+  flex: 0 1 45%;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-right label {
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.contact-right input,
+.contact-right textarea {
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.contact-right button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  width: 100%;
+}
+
+.contact-right button:hover {
+  background-color: #45a049;
+}
+
+.contact-right textarea {
+  resize: vertical; /* Kullanıcının textarea boyutunu dikey olarak değiştirmesine izin verir */
+}
